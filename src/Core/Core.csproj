@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IValidator.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DataAnnotationsValidator.cs" />
+    <Compile Include="DateTimeHelper.cs" />
+    <Compile Include="DateTimeOverrider.cs" />
+    <Compile Include="IAddress.cs" />
+    <Compile Include="ICanApplyTo.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IInteractor.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
