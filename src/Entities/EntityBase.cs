@@ -9,7 +9,11 @@ namespace EDeviceClaims.Entities
     [Key]
     public TKey Id { get; set; }
 
-    public DateTime WhenCreated { get; set; } = DateTimeHelper.UtcNow;
+    public DateTime WhenCreated {
+      get { return _whenCreated; }
+      set { _whenCreated = value; }
+    }
+    private DateTime _whenCreated = DateTimeHelper.UtcNow;
 
     public DateTime? WhenLastModified { get; set; }
   }
