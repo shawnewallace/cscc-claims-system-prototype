@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{621923EA-BAA3-4176-BD20-D398EA0C9783}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactors", "Interactors\Interactors.csproj", "{BC7C5B57-DEB4-4C2F-8EAC-C9B44A3B39BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{621923EA-BAA3-4176-BD20-D398EA0C9783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{621923EA-BAA3-4176-BD20-D398EA0C9783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{621923EA-BAA3-4176-BD20-D398EA0C9783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7C5B57-DEB4-4C2F-8EAC-C9B44A3B39BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7C5B57-DEB4-4C2F-8EAC-C9B44A3B39BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7C5B57-DEB4-4C2F-8EAC-C9B44A3B39BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7C5B57-DEB4-4C2F-8EAC-C9B44A3B39BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
