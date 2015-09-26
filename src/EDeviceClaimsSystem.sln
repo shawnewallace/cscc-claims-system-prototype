@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositorie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactors", "Interactors\Interactors.csproj", "{BC7C5B57-DEB4-4C2F-8EAC-C9B44A3B39BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{646831C9-5025-4662-96D8-5DA2EE256548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Integration.Tests", "Domain.Integration.Tests\Domain.Integration.Tests.csproj", "{7105C824-D875-46FC-B9EC-A712764D3953}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,8 +49,15 @@ Global
 		{BC7C5B57-DEB4-4C2F-8EAC-C9B44A3B39BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC7C5B57-DEB4-4C2F-8EAC-C9B44A3B39BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC7C5B57-DEB4-4C2F-8EAC-C9B44A3B39BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7105C824-D875-46FC-B9EC-A712764D3953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7105C824-D875-46FC-B9EC-A712764D3953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7105C824-D875-46FC-B9EC-A712764D3953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7105C824-D875-46FC-B9EC-A712764D3953}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7105C824-D875-46FC-B9EC-A712764D3953} = {646831C9-5025-4662-96D8-5DA2EE256548}
 	EndGlobalSection
 EndGlobal

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -14,5 +16,7 @@ namespace EDeviceClaims.Entities
       // Add custom user claims here
       return userIdentity;
     }
+
+    public virtual ICollection<Policy> UserPolicies { get; set; }
   }
 }

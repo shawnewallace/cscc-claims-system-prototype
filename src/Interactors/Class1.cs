@@ -12,11 +12,21 @@ namespace EDeviceClaims.Interactors
     Policy GetById(Guid id);
     Policy GetByNumber(string number);
     ICollection<Policy> GetByCustomerEmailAdress(string email);
+    ICollection<Policy> GetByUserId(string userId);
   }
 
   public class GetPolicyInteractor : IGetPolicyInteractor
   {
-    private readonly IPolicyRepository _repo;
+
+    private IPolicyRepository Repo
+    {
+      get { return _repo ?? (_repo = new PolicyRepository()); }
+      set { _repo = value; }
+    }
+    private IPolicyRepository _repo;
+
+
+    public GetPolicyInteractor() { }
 
     public GetPolicyInteractor(IPolicyRepository policyRepo)
     {
@@ -25,17 +35,22 @@ namespace EDeviceClaims.Interactors
 
     public Policy GetById(Guid id)
     {
-      return _repo.GetById(id);
+      return Repo.GetById(id);
     }
 
     public Policy GetByNumber(string number)
     {
-      return _repo.GetByPolicyNumber(number);
+      return Repo.GetByPolicyNumber(number);
     }
 
     public ICollection<Policy> GetByCustomerEmailAdress(string email)
     {
       throw new NotImplementedException();
+    }
+
+    public ICollection<Policy> GetByUserId(string userId)
+    {
+      return Repo.GetByUserId(userId);
     }
   }
 
