@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AddressDomainModel.cs" />
     <Compile Include="Models\PolicyDomainModel.cs" />
-    <Compile Include="Services\Class1.cs" />
+    <Compile Include="Models\UserPolicies.cs" />
+    <Compile Include="Services\PolicyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

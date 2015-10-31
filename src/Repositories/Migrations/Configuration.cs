@@ -39,6 +39,9 @@ namespace EDeviceClaims.Repositories.Migrations
       CreateUser("admin@company.com", "admin@company.com", context);
       CreateUser("callcenter@company.com", "callcenter@company.com", context);
 
+      context.Addresses.AddOrUpdate(p => p.Street1,
+      new AddressEntity { Id = Guid.NewGuid(), Street1 = "1234 My Street", Street2 = "Apt. 1", City = "Columbus", State = "Ohio", ZipCode = "54321", UserId = policyHolder.Id });
+
       var p1 = new Policy
       {
         Id = Guid.NewGuid(),

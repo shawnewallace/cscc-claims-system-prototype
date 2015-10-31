@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using EDeviceClaims.Entities;
@@ -9,7 +9,6 @@ namespace EDeviceClaims.Domain.Models
 {
   public class PolicyDomainModel
   {
-
     public PolicyDomainModel(Policy policyEntity)
     {
       Id = policyEntity.Id;

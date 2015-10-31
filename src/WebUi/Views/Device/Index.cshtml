@@ -4,6 +4,25 @@
 <ul>
   @foreach (var thing in Model)
   {
-    <li>@thing.Name -> @thing.SerialNumber</li>
+  <li>@thing.Name -> @thing.SerialNumber</li>
   }
 </ul>
+
+<div>
+  @foreach (var address in Model.Addresses)
+  {
+  <div>
+    @address.Id
+    <br />
+    @address.Street1
+    <br />
+    @address.Street2
+    <br />
+    @address.City
+    <br />
+    @address.State
+    <br />
+    @address.ZipCode
+  </div>
+  }
+</div>
