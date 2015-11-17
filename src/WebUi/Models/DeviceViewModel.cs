@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using EDeviceClaims.Domain.Models;
 
 namespace EDeviceClaims.WebUi.Models
@@ -11,6 +12,7 @@ namespace EDeviceClaims.WebUi.Models
       PolicyNumber = thing.Number;
       SerialNumber = thing.SerialNumber;
       Name = thing.DeviceName;
+      HasClaim = thing.Claims.Any();
     }
 
     public string Name { get; set; }

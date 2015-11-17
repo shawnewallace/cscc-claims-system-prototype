@@ -26,12 +26,15 @@ namespace EDeviceClaims.Interactors
     {
       var newClaim = new ClaimEntity
       {
+        Id = Guid.NewGuid(),
         Status = "NEW",
         PolicyId = PolicyId,
         UserId = UserId
       };
 
-      return _claimsRepo.Create(newClaim);
+      var result = _claimsRepo.Create(newClaim);
+      _claimsRepo.EfUnitOfWork.Context.SaveChanges();
+      return result;
     }
   }
 }

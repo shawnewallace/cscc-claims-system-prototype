@@ -9,6 +9,7 @@ namespace EDeviceClaims.Repositories.Contexts
   {
     public DbSet<Policy> Policies { get; set; }
     public DbSet<ClaimEntity> Claims { get; set; }
+    public DbSet<AddressEntity> Addresses { get; set; } 
 
     public EDeviceClaimsContext(string cn) : base(cn)
     {

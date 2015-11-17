@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
     <Compile Include="AuthorizedUser.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="Policy.cs" />

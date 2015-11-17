@@ -11,31 +11,18 @@ namespace EDeviceClaims.Domain.Integration.Tests.ServicesTests.PolicyServiceTest
   [TestFixture]
   public class GetByUserIdTests : RepositoryTestBase<EDeviceClaimsContext>
   {
-    private AuthorizedUser _user;
     private PolicyService _service;
 
     [SetUp]
     public void SetUpFixture()
     {
-      using (var db = new EDeviceClaimsContext())
-      {
-        _user = CreateUser("policyholder@company.com", "policyholder@company.com", db);
-        db.SaveChanges();
-
-        db.Policies.Add(new Policy { Id = Guid.NewGuid(), Number = "11121", SerialNumber = "MNOPQ", DeviceName = "iPhone 6+", CustomerEmail = "d@b.com", UserId = _user.Id});
-        db.Policies.Add(new Policy { Id = Guid.NewGuid(), Number = "11122", SerialNumber = "ABCDE", DeviceName = "iPhone 6+", CustomerEmail = "d@b.com", UserId = _user.Id });
-        db.Policies.Add(new Policy { Id = Guid.NewGuid(), Number = "11123", SerialNumber = "EDCBA", DeviceName = "iPhone 6+", CustomerEmail = "d@b.com" });
-
-        db.SaveChanges();
-      }
-
       _service = new PolicyService();
     }
 
     [Test]
     public void it_returns_the_policies_for_the_user()
     {
-      var result = _service.GetByUserId(_user.Id);
+      var result = _service.GetByUserId(User.Id);
       Assert.GreaterOrEqual(result.Count(), 2);
     }
 

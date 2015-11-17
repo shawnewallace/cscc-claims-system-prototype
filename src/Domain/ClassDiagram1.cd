@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EDeviceClaims.Domain.Services.PolicyService">
+    <Position X="0.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIQ=</HashCode>
+      <FileName>Services\Class1.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_getPolicyInteractor" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDeviceClaims.Domain.Models.PolicyDomainModel">
+    <Position X="0.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAEAAAAAAAAEAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Models\PolicyDomainModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDeviceClaims.Domain.Services.ClaimService">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Services\ClaimService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_createClaimInteractor" />
+      <Field Name="_getPolicyInteractor" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="EDeviceClaims.Domain.Services.IPolicyService" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Services\Class1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDeviceClaims.Interactors.IGetPolicyInteractor">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="EDeviceClaims.Domain.Services.IClaimService" Collapsed="true">
+    <Position X="0.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ClaimService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDeviceClaims.Interactors.ICreateClaimInteractor" Collapsed="true">
+    <Position X="6.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

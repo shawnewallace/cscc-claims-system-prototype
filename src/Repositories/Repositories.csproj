@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201511131700182_associateClaimUserAndPolicy.Designer.cs">
       <DependentUpon>201511131700182_associateClaimUserAndPolicy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511171922011_createAddressEntityAndAssociateWithUser.cs" />
+    <Compile Include="Migrations\201511171922011_createAddressEntityAndAssociateWithUser.Designer.cs">
+      <DependentUpon>201511171922011_createAddressEntityAndAssociateWithUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="PolicyRepository.cs" />
     <Compile Include="EfUnitOfWork.cs" />
     <Compile Include="Contexts\EDeviceClaimsContext.cs" />
@@ -122,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511131700182_associateClaimUserAndPolicy.resx">
       <DependentUpon>201511131700182_associateClaimUserAndPolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511171922011_createAddressEntityAndAssociateWithUser.resx">
+      <DependentUpon>201511171922011_createAddressEntityAndAssociateWithUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

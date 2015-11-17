@@ -16,7 +16,10 @@ namespace EDeviceClaims.Domain.Models
       Number = policyEntity.Number;
       SerialNumber = policyEntity.SerialNumber;
       DeviceName = policyEntity.DeviceName;
+      Claims = policyEntity.Claims;
     }
+
+    public List<ClaimEntity> Claims { get; set; }
 
     public Guid Id { get; set; }
 
