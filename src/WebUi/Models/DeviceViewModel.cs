@@ -20,5 +20,6 @@ namespace EDeviceClaims.WebUi.Models
     public string PolicyNumber { get; set; }
 
     public Guid PolicyId { get; set; }
+    public bool HasClaim { get; set; }
   }
 }

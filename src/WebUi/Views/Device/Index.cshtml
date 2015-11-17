@@ -1,9 +1,20 @@
 ﻿@model EDeviceClaims.WebUi.Models.DeviceListViewModel
 
 
-<ul>
+<table class="table table-bordered table-hover">
   @foreach (var thing in Model)
   {
-    <li>@thing.Name -> @thing.SerialNumber</li>
+    <tr>
+      <td>
+        <h3>@thing.Name</h3>
+      </td>
+      <td>
+        <div class="btn-group">
+
+          @Html.ActionLink("Details", "Details", new { @id = thing.PolicyId }, new { @class = "btn btn-lg btn-info" })
+          @Html.Partial("_ClaimButton", thing)
+        </div>
+      </td>
+    </tr>
   }
-</ul>
+</table>

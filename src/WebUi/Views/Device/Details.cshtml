@@ -1,0 +1,8 @@
+﻿@model EDeviceClaims.WebUi.Models.DeviceViewModel
+
+
+<h1>Device @Model.Name</h1>
+<h2>Serial #: <em>@Model.SerialNumber</em></h2>
+<div>
+  @Html.Partial("_ClaimButton", Model)
+</div>

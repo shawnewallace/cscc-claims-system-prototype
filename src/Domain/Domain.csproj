@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ClaimDomainModel.cs" />
     <Compile Include="Models\PolicyDomainModel.cs" />
+    <Compile Include="Services\ClaimService.cs" />
     <Compile Include="Services\Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

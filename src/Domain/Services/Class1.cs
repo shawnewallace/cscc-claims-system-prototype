@@ -10,6 +10,7 @@ namespace EDeviceClaims.Domain.Services
   public interface IPolicyService
   {
     IEnumerable<PolicyDomainModel> GetByUserId(string userId);
+    PolicyDomainModel GetById(Guid id);
   }
 
   public class PolicyService : IPolicyService
@@ -27,6 +28,15 @@ namespace EDeviceClaims.Domain.Services
       var policyEntities = GetPolicyInteractor.GetByUserId(userId);
 
       return policyEntities.Select(policyEntity => new PolicyDomainModel(policyEntity)).ToList();
+    }
+
+    public PolicyDomainModel GetById(Guid id)
+    {
+      var entity = GetPolicyInteractor.GetById(id);
+      
+      return entity == null
+        ? null
+        : new PolicyDomainModel(entity);
     }
   }
 }
