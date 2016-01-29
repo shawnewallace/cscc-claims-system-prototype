@@ -26,7 +26,15 @@ namespace EDeviceClaims.Domain.Services
     {
       var policyEntities = GetPolicyInteractor.GetByUserId(userId);
 
-      return policyEntities.Select(policyEntity => new PolicyDomainModel(policyEntity)).ToList();
+      return policyEntities.Select(policyEntity => new PolicyDomainModel(policyEntity))
+                           .ToList();
+
+      //var result = new List<PolicyDomainModel>();
+      //foreach (var entity in policyEntities)
+      //{
+      //  result.Add(new PolicyDomainModel(entity));
+      //}
+      //return result;
     }
   }
 }
