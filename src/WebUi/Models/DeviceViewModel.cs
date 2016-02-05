@@ -11,6 +11,7 @@ namespace EDeviceClaims.WebUi.Models
       PolicyNumber = thing.Number;
       SerialNumber = thing.SerialNumber;
       Name = thing.DeviceName;
+      HasPendingClaim = true;
     }
 
     public string Name { get; set; }
@@ -20,5 +21,6 @@ namespace EDeviceClaims.WebUi.Models
     public string PolicyNumber { get; set; }
 
     public Guid PolicyId { get; set; }
+    public bool HasPendingClaim { get; set; }
   }
 }
