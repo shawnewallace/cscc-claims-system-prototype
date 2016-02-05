@@ -4,8 +4,12 @@
 
 <div class="jumbotron">
     <h1>Welcome</h1>
-    <p class="lead">Bacon ipsum dolor amet reprehenderit pork chop jerky...</p>
-    @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="btn btn-primary btn-lg" })
+  <p class="lead">Bacon ipsum dolor amet reprehenderit pork chop jerky...</p>
+  @(Request.IsAuthenticated
+    ? Html.ActionLink("View Your Covered Devices", "Index", "Device", routeValues: null, htmlAttributes: new {@class = "btn btn-primary btn-lg"}) 
+    : Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink", @class = "btn btn-primary btn-lg"})
+   )
+
   </p>
 </div>
 
