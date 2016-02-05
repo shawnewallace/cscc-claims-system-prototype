@@ -1,9 +1,13 @@
 ﻿@model EDeviceClaims.WebUi.Models.DeviceListViewModel
 
+<h1>Your Covered Devices</h1>
 
 <ul>
-  @foreach (var thing in Model)
+  @foreach (var device in Model)
   {
-    <li>@thing.Name -> @thing.SerialNumber</li>
+    <li>
+      @device.Name&nbsp;
+      @Html.ActionLink("Details", "Details", "Device", routeValues: new { id = device.PolicyId }, htmlAttributes: new { @class = "btn btn-primary btn-sm" })
+    </li> 
   }
 </ul>

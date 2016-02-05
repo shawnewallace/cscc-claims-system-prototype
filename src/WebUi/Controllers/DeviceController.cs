@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EDeviceClaims.Domain.Services;
@@ -15,6 +16,14 @@ namespace EDeviceClaims.WebUi.Controllers
     {
       var domainModel = _policyService.GetByUserId(CurrentUserId);
       var model = new DeviceListViewModel(domainModel);
+
+      return View(model);
+    }
+
+    public ActionResult Details(Guid id)
+    {
+      var domainModel = _policyService.GetById(id);
+      var model = new DeviceViewModel(domainModel);
 
       return View(model);
     }
