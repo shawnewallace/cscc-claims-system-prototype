@@ -16,6 +16,8 @@ https://www.youtube.com/watch?v=cXUmeUGaAZQ
 #### Lesson 1
 https://www.youtube.com/watch?v=qAOHkSeHJW0
 
-
 #### Lesson 2
 https://youtu.be/VbGY2uXeTqU
+
+#### Lesson 3
+https://youtu.be/-E1AhnBlfI4
