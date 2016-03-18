@@ -11,12 +11,12 @@ namespace EDeviceClaims.Domain.Models
   public class PolicyDomainModel
   {
 
-    public PolicyDomainModel(Policy policyEntity)
+    public PolicyDomainModel(PolicyEntity policyEntityEntity)
     {
-      Id = policyEntity.Id;
-      Number = policyEntity.Number;
-      SerialNumber = policyEntity.SerialNumber;
-      DeviceName = policyEntity.DeviceName;
+      Id = policyEntityEntity.Id;
+      Number = policyEntityEntity.Number;
+      SerialNumber = policyEntityEntity.SerialNumber;
+      DeviceName = policyEntityEntity.DeviceName;
     }
 
     public Guid Id { get; set; }
