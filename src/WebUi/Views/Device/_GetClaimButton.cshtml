@@ -1,0 +1,10 @@
+﻿@model EDeviceClaims.WebUi.Models.DeviceViewModel
+
+@if (Model.HasExistingClaim)
+{
+  <a class="btn btn-info btn-sm">View Claim</a>
+}
+else
+{
+  @Html.ActionLink("Start a Claim", "Start", "Claim", routeValues: new { id = Model.PolicyId }, htmlAttributes: new { @class = "btn btn-danger btn-sm" })
+}

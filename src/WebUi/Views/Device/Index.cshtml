@@ -4,6 +4,9 @@
 <ul>
   @foreach (var thing in Model)
   {
-    <li>@thing.Name -> @thing.SerialNumber</li>
+    <li>
+      @thing.Name -> @thing.SerialNumber
+      @Html.Partial("_GetClaimButton", thing)
+    </li>
   }
 </ul>

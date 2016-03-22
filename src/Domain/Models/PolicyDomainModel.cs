@@ -11,13 +11,21 @@ namespace EDeviceClaims.Domain.Models
   public class PolicyDomainModel
   {
 
-    public PolicyDomainModel(PolicyEntity policyEntityEntity)
+    public PolicyDomainModel(PolicyEntity policyEntity)
     {
-      Id = policyEntityEntity.Id;
-      Number = policyEntityEntity.Number;
-      SerialNumber = policyEntityEntity.SerialNumber;
-      DeviceName = policyEntityEntity.DeviceName;
+      Id = policyEntity.Id;
+      Number = policyEntity.Number;
+      SerialNumber = policyEntity.SerialNumber;
+      DeviceName = policyEntity.DeviceName;
+      Claims = new List<ClaimDomainModel>();
+
+      foreach (var claim in policyEntity.Claims)
+      {
+        Claims.Add(new ClaimDomainModel(claim));
+      }
     }
+
+    public List<ClaimDomainModel> Claims { get; set; }
 
     public Guid Id { get; set; }
 
