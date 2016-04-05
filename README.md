@@ -21,3 +21,9 @@ https://youtu.be/VbGY2uXeTqU
 
 #### Lesson 3
 https://youtu.be/-E1AhnBlfI4
+
+#### Lesson 4a
+https://youtu.be/PPLOPxDuVe4
+
+#### Lesson 4b
+https://youtu.be/Ty57G4v2gso
