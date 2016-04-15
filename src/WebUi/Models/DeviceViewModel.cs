@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using EDeviceClaims.Domain.Models;
 
@@ -6,14 +7,18 @@ namespace EDeviceClaims.WebUi.Models
 {
   public class DeviceViewModel
   {
-    public DeviceViewModel(PolicyDomainModel thing)
+    public DeviceViewModel(PolicyWithClaimsDomainModel policy)
     {
-      PolicyId = thing.Id;
-      PolicyNumber = thing.Number;
-      SerialNumber = thing.SerialNumber;
-      Name = thing.DeviceName;
-      HasExistingClaim = thing.Claims.Any();
+      PolicyId = policy.Id;
+      PolicyNumber = policy.Number;
+      SerialNumber = policy.SerialNumber;
+      Name = policy.DeviceName;
+      MostCurrentClaim = (policy.Claims.Any())
+        ? new ClaimViewModel(policy.Claims.First())
+        : null;
     }
+
+    public ClaimViewModel MostCurrentClaim { get; set; }
 
     public string Name { get; set; }
 
@@ -23,6 +28,9 @@ namespace EDeviceClaims.WebUi.Models
 
     public Guid PolicyId { get; set; }
 
-    public bool HasExistingClaim { get; set; }
+    public bool ShowViewClaimButton()
+    {
+      return MostCurrentClaim != null;
+    }
   }
 }

@@ -10,22 +10,13 @@ namespace EDeviceClaims.Domain.Models
 {
   public class PolicyDomainModel
   {
-
     public PolicyDomainModel(PolicyEntity policyEntity)
     {
       Id = policyEntity.Id;
       Number = policyEntity.Number;
       SerialNumber = policyEntity.SerialNumber;
       DeviceName = policyEntity.DeviceName;
-      Claims = new List<ClaimDomainModel>();
-
-      foreach (var claim in policyEntity.Claims)
-      {
-        Claims.Add(new ClaimDomainModel(claim));
-      }
     }
-
-    public List<ClaimDomainModel> Claims { get; set; }
 
     public Guid Id { get; set; }
 
@@ -34,5 +25,27 @@ namespace EDeviceClaims.Domain.Models
     public string DeviceName { get; set; }
 
     public string SerialNumber { get; set; }
+  }
+
+  public class PolicyWithClaimsDomainModel : PolicyDomainModel
+  {
+    public PolicyWithClaimsDomainModel(PolicyEntity policyEntity) : base(policyEntity)
+    {
+      LoadClaims(policyEntity.Claims);
+    }
+
+    private void LoadClaims(IReadOnlyCollection<ClaimEntity> claims)
+    {
+      if (claims == null) return;
+
+      foreach (var claim in claims)
+      {
+        Claims.Add(new ClaimDomainModel(claim));
+      }
+    }
+
+    public List<ClaimDomainModel> Claims { get; set; } = new List<ClaimDomainModel>();
+
+    
   }
 }

@@ -1,8 +1,9 @@
 ﻿@model EDeviceClaims.WebUi.Models.DeviceViewModel
 
-@if (Model.HasExistingClaim)
+@if (Model.ShowViewClaimButton())
 {
-  <a class="btn btn-info btn-sm">View Claim</a>
+  @Html.ActionLink("View Claim", "Edit", "Claim", routeValues: new { id = Model.MostCurrentClaim.Id }, htmlAttributes: new { @class = "btn btn-info btn-sm" })
+
 }
 else
 {

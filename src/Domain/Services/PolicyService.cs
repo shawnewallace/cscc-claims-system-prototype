@@ -9,7 +9,7 @@ namespace EDeviceClaims.Domain.Services
 {
   public interface IPolicyService
   {
-    IEnumerable<PolicyDomainModel> GetByUserId(string userId);
+    IEnumerable<PolicyWithClaimsDomainModel> GetByUserId(string userId);
   }
 
   public class PolicyService : IPolicyService
@@ -22,19 +22,12 @@ namespace EDeviceClaims.Domain.Services
       set { _getPolicyInteractor = value; }
     }
 
-    public IEnumerable<PolicyDomainModel> GetByUserId(string userId)
+    public IEnumerable<PolicyWithClaimsDomainModel> GetByUserId(string userId)
     {
       var policyEntities = GetPolicyInteractor.GetByUserId(userId);
 
-      return policyEntities.Select(policyEntity => new PolicyDomainModel(policyEntity))
+      return policyEntities.Select(policyEntity => new PolicyWithClaimsDomainModel(policyEntity))
                            .ToList();
-
-      //var result = new List<PolicyDomainModel>();
-      //foreach (var entity in policyEntities)
-      //{
-      //  result.Add(new PolicyDomainModel(entity));
-      //}
-      //return result;
     }
   }
 }

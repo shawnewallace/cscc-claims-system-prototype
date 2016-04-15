@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using EDeviceClaims.Core;
 
@@ -18,9 +19,25 @@ namespace EDeviceClaims.Repositories
     protected DbSet<TEntity> ObjectSet { get { return _objectset ?? (_objectset = EfUnitOfWork.Context.Set<TEntity>()); } }
 
     public TEntity GetById(TKey id) { return ObjectSet.Find(id); }
-    public TEntity Create(TEntity entity) { return ObjectSet.Add(entity); }
-    public void Update(TEntity entity) { }
-    public void Delete(TEntity entity) { ObjectSet.Remove(entity); }
+
+    public TEntity Create(TEntity entity)
+    {
+      var result = ObjectSet.Add(entity);
+
+      EfUnitOfWork.Commit();
+
+      return result;
+    }
+
+    public void Update(TEntity entity)
+    {
+    }
+
+    public void Delete(TEntity entity)
+    {
+      ObjectSet.Remove(entity);
+      EfUnitOfWork.Commit();
+    }
     public IList<TEntity> GetAll() { return ObjectSet.Select(o => o).ToList(); }
   }
 }

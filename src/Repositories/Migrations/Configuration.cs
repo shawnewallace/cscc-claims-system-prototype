@@ -1,3 +1,4 @@
+using EDeviceClaims.Core;
 using EDeviceClaims.Entities;
 using EDeviceClaims.Repositories.Contexts;
 using Microsoft.AspNet.Identity;
@@ -19,25 +20,16 @@ namespace EDeviceClaims.Repositories.Migrations
 
     protected override void Seed(EDeviceClaims.Repositories.Contexts.EDeviceClaimsContext context)
     {
-      //  This method will be called after migrating to the latest version.
+      var roleStore = new RoleStore<IdentityRole>(context);
+      var roleManager = new RoleManager<IdentityRole>(roleStore);
 
-      //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-      //  to avoid creating duplicate seed data. E.g.
-      //
-      //    context.People.AddOrUpdate(
-      //      p => p.FullName,
-      //      new Person { FullName = "Andrew Peters" },
-      //      new Person { FullName = "Brice Lambson" },
-      //      new Person { FullName = "Rowan Miller" }
-      //    );
-      //
+      roleManager.Create(new IdentityRole { Name = ApplicationRoles.Admin });
+      roleManager.Create(new IdentityRole { Name = ApplicationRoles.Underwriter });
+      roleManager.Create(new IdentityRole { Name = ApplicationRoles.PolicyHolder });
 
-      //var roleStore = new RoleStore<IdentityRole>(context);
-      //var roleManager = new RoleManager<IdentityRole>(roleStore);
-
-      var policyHolder = CreateUser("user@personal.com", "user@personal.com", context);
-      CreateUser("admin@company.com", "admin@company.com", context);
-      CreateUser("callcenter@company.com", "callcenter@company.com", context);
+      var policyHolder = CreateUser("user@personal.com", "user@personal.com", context, ApplicationRoles.PolicyHolder );
+      CreateUser("admin@company.com", "admin@company.com", context, ApplicationRoles.Admin);
+      CreateUser("callcenter@company.com", "callcenter@company.com", context, ApplicationRoles.Underwriter);
 
       var p1 = new PolicyEntity
       {
@@ -77,7 +69,10 @@ namespace EDeviceClaims.Repositories.Migrations
       //context.SaveChanges();
     }
 
-    public AuthorizedUser CreateUser(string userName, string email, EDeviceClaimsContext context)
+    public AuthorizedUser CreateUser(string userName, 
+                                     string email, 
+                                     EDeviceClaimsContext context, 
+                                     string role = ApplicationRoles.PolicyHolder)
     {
       var userStore = new UserStore<AuthorizedUser>(context);
       var userManager = new UserManager<AuthorizedUser>(userStore);
@@ -88,8 +83,7 @@ namespace EDeviceClaims.Repositories.Migrations
 
       user = new AuthorizedUser { UserName = userName, Email = email };
       userManager.Create(user, "password");
-      //roleManager.Create(new IdentityRole { Name = "admin" });
-      //userManager.AddToRole(user.Id, "admin");
+      userManager.AddToRole(user.Id, role);
       return user;
     }
   }

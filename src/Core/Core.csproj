@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationRoles.cs" />
+    <Compile Include="ClaimStatus.cs" />
     <Compile Include="IValidator.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DataAnnotationsValidator.cs" />

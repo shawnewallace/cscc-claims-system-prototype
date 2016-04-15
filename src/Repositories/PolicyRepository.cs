@@ -28,7 +28,9 @@ namespace EDeviceClaims.Repositories
 
     public ICollection<PolicyEntity> GetByUserId(string userId)
     {
-      return ObjectSet.Where(p => p.UserId == userId).Include(c => c.Claims).ToList();
+      return ObjectSet.Where(p => p.UserId == userId)
+                      .Include(c => c.Claims)
+                      .ToList();
     }
   }
 }

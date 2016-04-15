@@ -1,0 +1,24 @@
+﻿@model EDeviceClaims.WebUi.Models.ClaimViewModel
+
+<h2>Claim Id @Model.Id</h2>
+<h3>Status: @Model.Status</h3>
+
+
+<div>
+  <h4>Device Information</h4>
+  <div>@Model.DeviceName</div>
+  <div>@Model.PolicyNumber</div>
+  <div>@Model.SerialNumber</div>
+</div>
+
+<div>
+  <h4>Notes</h4>
+  @foreach (var note in Model.Notes)
+  {
+    <div>
+      <span>@note.Content</span>
+      <span>@note.WhenCreated (need to convert from UTC)</span>
+      <span>@note.CreatedBy</span>
+    </div>
+  }
+</div>
