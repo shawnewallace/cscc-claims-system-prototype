@@ -30,3 +30,6 @@ https://youtu.be/Ty57G4v2gso
 
 #### Lesson 5 - Roles
 https://www.youtube.com/watch?v=EVwUALKOFS4
+
+#### Lesson 6 - Underwriter Claims
+https://youtu.be/vN2mPhlsSKM
