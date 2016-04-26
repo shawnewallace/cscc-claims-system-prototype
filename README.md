@@ -33,3 +33,6 @@ https://www.youtube.com/watch?v=EVwUALKOFS4
 
 #### Lesson 6 - Underwriter Claims
 https://youtu.be/vN2mPhlsSKM
+
+#### Lesson 6b - add policy holder name to underwriter claims list
+https://youtu.be/tMo2gZgD_DE
