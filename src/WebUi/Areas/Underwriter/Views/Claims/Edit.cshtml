@@ -1,0 +1,31 @@
+﻿@using EDeviceClaims.Core
+@model EDeviceClaims.WebUi.Areas.Underwriter.Models.EditClaimViewModel
+
+<h1>Edit Claim</h1>
+
+<div>
+  <div>Claim Id: @Model.Id</div>
+  <div>Policy Id: @Model.PolicyId</div>
+  <div>Polcy Holder: @Model.FirstName @Model.LastName</div>
+  <div>Claim Id: @Model.WhenStarted.ToShortDateString() @Model.WhenStarted.ToShortTimeString()</div>
+  <div>
+    Status: @Model.Status
+    <select>
+      <option>@ClaimStatus.Open</option>
+      <option>@ClaimStatus.Denied</option>
+      <option>@ClaimStatus.Approved</option>
+    </select>
+  </div>
+</div>
+<hr/>
+<div>
+  @foreach (var note in Model.Notes)
+  {
+    @Html.Partial("_note", note)
+  }
+
+  <textarea cols="80" rows="10">
+    
+  </textarea>
+  @Html.ActionLink("Add Note", "Edit", "Claims", routeValues: new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-large btn-lg" })
+</div>

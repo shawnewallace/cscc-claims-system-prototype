@@ -26,7 +26,10 @@ namespace EDeviceClaims.WebUi.Areas.Underwriter.Models
       Name = claim.Policy.DeviceName;
       Start = $"{claim.WhenStarted.ToShortDateString()} {claim.WhenStarted.ToShortTimeString()}"; ;
       Status = claim.Status.ToString();
+      PolicyHolderName = $"{claim.LastName}, {claim.FirstName}";
     }
+
+    public string PolicyHolderName { get; set; }
 
     public string Status { get; set; }
 

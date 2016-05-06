@@ -172,6 +172,7 @@
     <Compile Include="Areas\Underwriter\Controllers\ClaimsController.cs" />
     <Compile Include="Areas\Underwriter\Controllers\UnderwriterAppController.cs" />
     <Compile Include="Areas\Underwriter\Models\ClaimsListViewModel.cs" />
+    <Compile Include="Areas\Underwriter\Models\EditClaimViewModel.cs" />
     <Compile Include="Areas\Underwriter\UnderwriterAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppController.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Models\DeviceViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NoteViewModel.cs" />
+    <Compile Include="Models\UiConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -204,6 +206,7 @@
     <Content Include="Areas\Underwriter\Views\web.config" />
     <Content Include="Areas\Underwriter\Views\Claims\Index.cshtml" />
     <Content Include="Areas\Underwriter\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Underwriter\Views\Claims\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

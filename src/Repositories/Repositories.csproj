@@ -73,6 +73,19 @@
     <Compile Include="Migrations\201604151258382_addedClaimStatus.Designer.cs">
       <DependentUpon>201604151258382_addedClaimStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604221223106_addedNamesToUser.cs" />
+    <Compile Include="Migrations\201604221223106_addedNamesToUser.Designer.cs">
+      <DependentUpon>201604221223106_addedNamesToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604221305295_addedNicknameToProfile.cs" />
+    <Compile Include="Migrations\201604221305295_addedNicknameToProfile.Designer.cs">
+      <DependentUpon>201604221305295_addedNicknameToProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605061321496_addNoteEntity.cs" />
+    <Compile Include="Migrations\201605061321496_addNoteEntity.Designer.cs">
+      <DependentUpon>201605061321496_addNoteEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyRepository - Copy.cs" />
     <Compile Include="PolicyRepository.cs" />
     <Compile Include="EfUnitOfWork.cs" />
     <Compile Include="Contexts\EDeviceClaimsContext.cs" />
@@ -122,6 +135,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604151258382_addedClaimStatus.resx">
       <DependentUpon>201604151258382_addedClaimStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604221223106_addedNamesToUser.resx">
+      <DependentUpon>201604221223106_addedNamesToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604221305295_addedNicknameToProfile.resx">
+      <DependentUpon>201604221305295_addedNicknameToProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605061321496_addNoteEntity.resx">
+      <DependentUpon>201605061321496_addNoteEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -16,6 +16,7 @@ namespace EDeviceClaims.WebUi.Models
       MostCurrentClaim = (policy.Claims.Any())
         ? new ClaimViewModel(policy.Claims.First())
         : null;
+
     }
 
     public ClaimViewModel MostCurrentClaim { get; set; }

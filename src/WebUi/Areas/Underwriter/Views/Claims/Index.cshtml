@@ -19,9 +19,12 @@
       <td>@claim.Id</td>
       <td>@claim.PolicyId</td>
       <td>@claim.Name</td>
-      <td>TODO</td>
+      <td>@claim.PolicyHolderName</td>
       <td>@claim.Start</td>
       <td>@claim.Status</td>
+      <td>
+        @Html.ActionLink("Edit Claim", "Edit", "Claims", routeValues: new { id = claim.Id }, htmlAttributes: new { @class = "btn btn-info btn-sm" })
+      </td>
     </tr>
   }
 </table>

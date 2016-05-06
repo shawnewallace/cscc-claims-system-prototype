@@ -12,6 +12,7 @@ namespace EDeviceClaims.Repositories
   public interface IClaimRepository : IEfRepository<ClaimEntity, Guid>
   {
     List<ClaimEntity> GetAllOpen();
+    ClaimEntity GetByIdWithNotes(Guid id);
   }
 
   public class ClaimRepository : EfRepository<ClaimEntity, Guid>, IClaimRepository
@@ -35,6 +36,13 @@ namespace EDeviceClaims.Repositories
         .Include(c => c.Policy)
         .Include(c => c.Policy.User)
         .ToList();
+    }
+
+    public ClaimEntity GetByIdWithNotes(Guid id)
+    {
+      return ObjectSet.Where(c => c.Id == id)
+              .Include(c => c.Notes.Select(n => n.User))
+              .FirstOrDefault();
     }
   }
 }

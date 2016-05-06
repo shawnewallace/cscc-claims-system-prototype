@@ -30,7 +30,7 @@ namespace EDeviceClaims.Interactors
 
     public ClaimEntity Execute(Guid id)
     {
-      return Repo.GetById(id);
+      return Repo.GetByIdWithNotes(id);
     }
 
     public List<ClaimEntity> GetAllOpen()
