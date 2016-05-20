@@ -39,3 +39,6 @@ https://youtu.be/tMo2gZgD_DE
 
 #### Lesson 7a - Approve a Claim
 https://www.youtube.com/watch?v=YBmmfCYwX8c
+
+#### Lesson 7b - add note to claim
+https://youtu.be/3jUv40JwvgU
