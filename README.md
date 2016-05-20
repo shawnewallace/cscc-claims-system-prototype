@@ -36,3 +36,6 @@ https://youtu.be/vN2mPhlsSKM
 
 #### Lesson 6b - add policy holder name to underwriter claims list
 https://youtu.be/tMo2gZgD_DE
+
+#### Lesson 7a - Approve a Claim
+https://www.youtube.com/watch?v=YBmmfCYwX8c
